@@ -2,6 +2,10 @@
 
 A minimalist project to manage your money.
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/974e3c9d2ed98da3f951/maintainability)](https://codeclimate.com/github/leooliveiradev/my-wallet/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/974e3c9d2ed98da3f951/test_coverage)](https://codeclimate.com/github/leooliveiradev/my-wallet/test_coverage)
+
 ## Stack
 
 * ES6
@@ -65,6 +69,7 @@ npm run production
 ### How to contribute
 
 **Docs**
+
 Please update the README with any config changes, the code and docs should always be in sync.
 
 **Branch organization**
