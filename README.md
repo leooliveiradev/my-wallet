@@ -2,9 +2,7 @@
 
 A minimalist project to manage your money.
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/974e3c9d2ed98da3f951/maintainability)](https://codeclimate.com/github/leooliveiradev/my-wallet/maintainability)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/974e3c9d2ed98da3f951/test_coverage)](https://codeclimate.com/github/leooliveiradev/my-wallet/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/974e3c9d2ed98da3f951/maintainability)](https://codeclimate.com/github/leooliveiradev/my-wallet/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/974e3c9d2ed98da3f951/test_coverage)](https://codeclimate.com/github/leooliveiradev/my-wallet/test_coverage) [![Build Status](https://travis-ci.org/leooliveiradev/my-wallet.svg?branch=master)](https://travis-ci.org/leooliveiradev/my-wallet)
 
 ## Stack
 
