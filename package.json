@@ -23,7 +23,7 @@
       "jsx"
     ],
     "moduleNameMapper": {
-      "src/(.*)$": "<rootDir>/src/$1",
+      "app/(.*)$": "<rootDir>/src/$1",
       "\\.(css|scss)$": "<rootDir>/tests/styleMock.js"
     },
     "setupTestFrameworkScriptFile": "./tests/setupTests.js",
@@ -39,6 +39,8 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
+    "lodash.get": "^4.4.2",
+    "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "styled-components": "^4.0.2"
