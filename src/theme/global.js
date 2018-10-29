@@ -30,8 +30,14 @@ const Global = createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+  html {
+    font-size: 10px;
+  }
   body {
     line-height: 1;
+    background: #f6f7fb;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
   }
   ol, ul {
     list-style: none;
