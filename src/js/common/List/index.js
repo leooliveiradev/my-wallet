@@ -17,6 +17,7 @@ const List = memo(({ items, ItemComponent }) => (
   <ListWrapper>
     {items.map(item => (
       <ItemComponent
+        key={item.description}
         {...item}
       />
     ))}

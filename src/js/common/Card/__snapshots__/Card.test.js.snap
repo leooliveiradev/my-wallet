@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card snapshot should render the Card 1`] = `
+<div
+  className="sc-bdVaJa jtTKft"
+  size="md"
+>
+  <h2
+    className="sc-htpNat jzBuPf"
+  >
+    title of transaction
+  </h2>
+  <div
+    className="sc-bwzfXH jIEWCi"
+  >
+    <p>
+      Card body
+    </p>
+  </div>
+</div>
+`;
