@@ -6,8 +6,9 @@ export default {
     textLight: '#c6c9d9',
     white: '#fff',
     black: '#151515',
-    grey: '#c6c9d9',
     gray: '#9a9a9a',
+    lightGray: '#dedada',
+    lightGray2: '#e4e4e4',
   },
   fontStyle: {
     primary: 'Roboto',
