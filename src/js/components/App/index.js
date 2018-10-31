@@ -7,6 +7,7 @@ import TransactionItem from 'app/js/components/TransactionItem';
 import CardAmount from 'app/js/components/CardAmount';
 import Button from 'app/js/common/Button';
 import Input from 'app/js/common/Input';
+import TransactionForm from 'app/js/components/TransactionForm';
 
 const transactions = [
   {
@@ -36,6 +37,7 @@ const App = () => (
   <ThemeProvider>
     <Fragment>
       <GlobalStyle />
+      <TransactionForm />
       <Button>
         Add Transaction
       </Button>

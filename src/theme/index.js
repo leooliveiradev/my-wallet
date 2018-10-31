@@ -9,6 +9,7 @@ export default {
     gray: '#9a9a9a',
     lightGray: '#dedada',
     lightGray2: '#e4e4e4',
+    lightGray3: '#ababab',
   },
   fontStyle: {
     primary: 'Roboto',
