@@ -6,6 +6,7 @@ import List from 'app/js/common/List';
 import TransactionItem from 'app/js/components/TransactionItem';
 import CardAmount from 'app/js/components/CardAmount';
 import Button from 'app/js/common/Button';
+import Input from 'app/js/common/Input';
 
 const transactions = [
   {
@@ -38,6 +39,13 @@ const App = () => (
       <Button>
         Add Transaction
       </Button>
+      <Input
+        type="text"
+        onChange={event => console.log(event.target.value)}
+        name="transaction"
+        placeholder="Transaction"
+        rounded
+      />
       <CardAmount
         title="Total Amount"
         size="sm"
