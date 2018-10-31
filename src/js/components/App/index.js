@@ -5,6 +5,7 @@ import GlobalStyle from 'app/theme/global';
 import List from 'app/js/common/List';
 import TransactionItem from 'app/js/components/TransactionItem';
 import CardAmount from 'app/js/components/CardAmount';
+import Button from 'app/js/common/Button';
 
 const transactions = [
   {
@@ -34,6 +35,9 @@ const App = () => (
   <ThemeProvider>
     <Fragment>
       <GlobalStyle />
+      <Button>
+        Add Transaction
+      </Button>
       <CardAmount
         title="Total Amount"
         size="sm"
