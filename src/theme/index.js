@@ -2,19 +2,12 @@ export default {
   color: {
     primary: '#8200ff',
     secondary: '#fff',
-
     text: '#151515',
     textLight: '#c6c9d9',
-
     white: '#fff',
     black: '#151515',
     grey: '#c6c9d9',
     gray: '#9a9a9a',
-
-    shadow: '',
-
-    success: '',
-    pending: '',
   },
   fontStyle: {
     primary: 'Roboto',
@@ -29,10 +22,5 @@ export default {
     regular: 400,
     semibold: 500,
     bold: 700,
-  },
-  breakpoints: {
-    sm: '',
-    md: '',
-    lg: '',
   },
 };
