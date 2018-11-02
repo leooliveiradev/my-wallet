@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { fromTheme } from 'app/js/utils';
 
 const Button = styled.button.attrs({
-  type: 'button',
+  type: ({ type }) => type,
 })`
   display: inline-block;
   padding: 0 1.4rem;
@@ -18,5 +18,9 @@ const Button = styled.button.attrs({
   font-size: 1rem;
   color: #fff;
 `;
+
+Button.defaultProps = {
+  type: 'button',
+};
 
 export default Button;

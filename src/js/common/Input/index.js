@@ -9,10 +9,10 @@ const Input = styled.input.attrs({
   padding: 0 1.2rem;
   background-color: ${fromTheme('color.secondary')};
   border-radius: ${({ rounded }) => (rounded ? '20px' : '0px')};
-  border: solid 1px ${fromTheme('color.grey')};
+  border: solid 1px ${fromTheme('color.lightGray')};
   font-family: ${fromTheme('fontStyle.primary')};
   font-size: 1rem;
-  color: ${fromTheme('color.lightGray2')};
+  color: ${fromTheme('color.lightGray3')};
   outline: none;
   &::placeholder {
     font-size: 1rem;

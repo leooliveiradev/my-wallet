@@ -11,3 +11,7 @@ export const dateFormatter = (date) => {
   const day = padStartZero(newDate.getDate());
   return `${month}/${day}/${newDate.getFullYear()}`;
 };
+
+export const isEmpty = value => value === undefined || value === null || value === '';
+
+export const hasKeys = object => Object.keys(object).length;
