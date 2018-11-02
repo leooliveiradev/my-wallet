@@ -1,38 +1,14 @@
 import React from 'react';
 import TransactionForm from 'app/js/components/TransactionForm';
+import { isEmpty, hasKeys } from 'app/js/utils';
+import { applyValidators } from 'app/js/utils/form';
 
-const isEmpty = value => value === undefined || value === null || value === '';
-
-const formValidators = {
+export const formValidators = {
   isEmpty,
 };
 
-const messageErros = {
+export const messageErrors = {
   isEmpty: 'This field is required!',
-};
-
-// Todo make unit test and move to utils
-const checkValue = (
-  validators, value, currentField,
-) => {
-  const result = validators.reduce((acc, fnValidator) => {
-    const currentValidator = formValidators[fnValidator];
-    if (currentValidator(value)) {
-      acc[currentField] = messageErros[fnValidator];
-    }
-    return acc;
-  }, {});
-  return result;
-};
-
-// TODO make unit test move to utils
-const applyValidators = (fields) => {
-  const result = Object.keys(fields).reduce((acc, currentField) => {
-    const { validators, value } = fields[currentField];
-    const resultOfValidate = checkValue(validators, value, currentField);
-    return { ...acc, ...resultOfValidate };
-  }, {});
-  return result;
 };
 
 class Transaction extends React.Component {
@@ -61,17 +37,14 @@ class Transaction extends React.Component {
       },
     };
 
-    const errors = applyValidators(fields);
-    if (Object.keys(errors).length) {
-      this.setState({
-        errors,
-      });
-    } else {
-      this.setState({
-        errors: {},
-      });
-      // add transaction
+    const errors = applyValidators(fields, formValidators, messageErrors);
+    if (!hasKeys(errors)) {
+      // add item
     }
+
+    this.setState({
+      errors,
+    });
   }
 
   handleInputChange = (event) => {

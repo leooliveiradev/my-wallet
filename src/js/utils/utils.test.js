@@ -1,5 +1,7 @@
 import theme from 'app/theme';
-import { fromTheme, dateFormatter, padStartZero } from './index';
+import {
+  fromTheme, dateFormatter, padStartZero, isEmpty,
+} from 'app/js/utils';
 
 describe('utils', () => {
   it('fromTheme - should receive the path and access using this path property on the theme object', () => {
@@ -14,5 +16,11 @@ describe('utils', () => {
 
   it('padStartZero - should receive string value and pad it with 0', () => {
     expect(padStartZero(2)).toEqual('02');
+  });
+
+  it('isEmpty - should return true when there are no values', () => {
+    expect(isEmpty('')).toEqual(true);
+    expect(isEmpty(undefined)).toEqual(true);
+    expect(isEmpty(null)).toEqual(true);
   });
 });
