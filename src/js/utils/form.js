@@ -9,7 +9,6 @@ export const checkField = (validators, value, currentField, formValidators, mess
   return result;
 };
 
-// TODO make unit test move to utils
 export const applyValidators = (fields, formValidators, messageErrors) => {
   const result = Object.keys(fields).reduce((acc, currentField) => {
     const { validators, value } = fields[currentField];
