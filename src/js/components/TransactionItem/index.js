@@ -53,8 +53,8 @@ const Bullet = styled.span`
 `;
 
 const TransactionItem = memo(({
-  description, value, dateOfTransaction,
-  type, status,
+  description, value, transactionDate,
+  type, status, deleteTransaction, uuid,
 }) => (
   <Wrapper rounded>
     <ColumnIcon
@@ -70,7 +70,7 @@ const TransactionItem = memo(({
       {description}
     </Column>
     <Column size="md">
-      {dateFormatter(dateOfTransaction)}
+      {dateFormatter(transactionDate)}
     </Column>
     <Column size="sm">
       <Bullet
@@ -82,6 +82,15 @@ const TransactionItem = memo(({
     </Column>
     <Column size="xs">
       {value}
+    </Column>
+    <Column size="xs">
+      <button
+        type="button"
+        data-uuid={uuid}
+        onClick={deleteTransaction}
+      >
+        Remove
+      </button>
     </Column>
   </Wrapper>
 ));

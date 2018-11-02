@@ -19,6 +19,7 @@ const ErrorMessage = styled.span`
 
 const TransactionForm = memo(({
   onSubmit, handleInputChange, errors,
+  values,
 }) => (
   <FormWrapper
     onSubmit={(event) => {
@@ -31,6 +32,7 @@ const TransactionForm = memo(({
       rounded
       placeholder="14,40"
       name="amount"
+      value={values.amount}
       onChange={handleInputChange}
     />
     {errors.amount && (
@@ -42,6 +44,7 @@ const TransactionForm = memo(({
       rounded
       placeholder="Outback dinner"
       name="description"
+      value={values.description}
       onChange={handleInputChange}
     />
     {errors.description && (

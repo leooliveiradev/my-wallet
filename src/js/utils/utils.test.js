@@ -1,6 +1,7 @@
 import theme from 'app/theme';
 import {
   fromTheme, dateFormatter, padStartZero, isEmpty,
+  sumTotalWithAmount,
 } from 'app/js/utils';
 
 describe('utils', () => {
@@ -22,5 +23,11 @@ describe('utils', () => {
     expect(isEmpty('')).toEqual(true);
     expect(isEmpty(undefined)).toEqual(true);
     expect(isEmpty(null)).toEqual(true);
+  });
+  it('sumTotalWithAmount - receive a total and a object with the amount property and should returns the sum total with this amount', () => {
+    expect(sumTotalWithAmount(
+      10,
+      { amount: '20.2' },
+    )).toEqual(30.2);
   });
 });

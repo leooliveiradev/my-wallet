@@ -13,12 +13,13 @@ const ListWrapper = styled.ul`
   }
 `;
 
-const List = memo(({ items, ItemComponent }) => (
+const List = memo(({ items, ItemComponent, ...props }) => (
   <ListWrapper>
     {items.map(item => (
       <ItemComponent
         key={item.description}
         {...item}
+        {...props}
       />
     ))}
   </ListWrapper>
