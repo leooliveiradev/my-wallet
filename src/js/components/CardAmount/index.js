@@ -6,13 +6,16 @@ import { fromTheme } from 'app/js/utils';
 const ContentWrapper = styled.div`
   font-size: 1rem;
   display: inline-flex;
+  height: 6rem;
   width: 100%;
+  min-width: 20rem;
   justify-content: space-between;
 `;
 
 const Text = styled.div`
   font-size: 2.6rem;
   font-weight: 500;
+  align-self: center;
 `;
 
 const Subtitle = styled.div`
@@ -34,7 +37,7 @@ const CardBalance = memo(({
         {subtitle}
       </Subtitle>
       <Text>
-        {amount}
+        {`$ ${parseFloat(amount)}`}
       </Text>
     </ContentWrapper>
   </Card>
