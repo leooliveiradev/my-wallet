@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input snapshot should render the Input 1`] = `
+<input
+  className="sc-bdVaJa iiTjkL"
+  name="transaction"
+  onChange={[Function]}
+  placeholder="Transaction"
+  type="text"
+/>
+`;

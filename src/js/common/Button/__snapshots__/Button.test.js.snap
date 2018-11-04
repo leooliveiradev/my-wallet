@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button snapshot should render the Button 1`] = `
+<button
+  className="sc-bdVaJa jolRSw"
+  type="button"
+>
+  Add transaction
+</button>
+`;

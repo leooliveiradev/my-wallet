@@ -23,7 +23,7 @@
       "jsx"
     ],
     "moduleNameMapper": {
-      "src/(.*)$": "<rootDir>/src/$1",
+      "app/(.*)$": "<rootDir>/src/$1",
       "\\.(css|scss)$": "<rootDir>/tests/styleMock.js"
     },
     "setupTestFrameworkScriptFile": "./tests/setupTests.js",
@@ -39,9 +39,13 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "styled-components": "^4.0.2"
+    "lodash.get": "^4.4.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-svg": "^6.0.20",
+    "styled-components": "^4.0.2",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -72,6 +76,7 @@
     "husky": "^1.1.2",
     "jest": "^23.4.1",
     "node-sass": "^4.9.2",
+    "react-test-renderer": "^16.6.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "stylelint": "^9.3.0",
