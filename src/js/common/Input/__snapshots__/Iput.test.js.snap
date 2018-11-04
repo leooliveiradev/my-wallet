@@ -2,7 +2,7 @@
 
 exports[`Input snapshot should render the Input 1`] = `
 <input
-  className="sc-bdVaJa fbSDRy"
+  className="sc-bdVaJa iiTjkL"
   name="transaction"
   onChange={[Function]}
   placeholder="Transaction"

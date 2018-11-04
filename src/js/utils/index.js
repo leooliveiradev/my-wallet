@@ -16,9 +16,20 @@ export const isEmpty = value => value === undefined || value === null || value =
 
 export const hasKeys = object => Object.keys(object).length;
 
-export const sumTotalWithAmount = (total, transaction) => parseFloat(transaction.amount) + total;
+export const precise = amount => parseFloat(
+  Math.round(amount * 100) / 100,
+);
+
+export const getTotalCreditAndDebit = (acc, transaction) => {
+  if (transaction.type === 'credit') {
+    acc.credit = precise(transaction.amount) + precise(acc.credit);
+  } else {
+    acc.debit = precise(transaction.amount) + precise(acc.debit);
+  }
+  return acc;
+};
 
 export const calculateTotalOfTransactions = transactions => transactions.reduce(
-  sumTotalWithAmount,
-  0,
+  getTotalCreditAndDebit,
+  { credit: 0, debit: 0 },
 );

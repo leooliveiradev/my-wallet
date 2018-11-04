@@ -52,8 +52,20 @@ const Bullet = styled.span`
   color: ${({ status }) => statusColors[status]};
 `;
 
+const RemoveButton = styled.button`
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+`;
+
 const TransactionItem = memo(({
-  description, value, transactionDate,
+  description, amount, transactionDate,
   type, status, deleteTransaction, uuid,
 }) => (
   <Wrapper rounded>
@@ -81,16 +93,18 @@ const TransactionItem = memo(({
       {status}
     </Column>
     <Column size="xs">
-      {value}
+      {`$ ${amount}`}
     </Column>
     <Column size="xs">
-      <button
-        type="button"
-        data-uuid={uuid}
+      <RemoveButton
         onClick={deleteTransaction}
+        data-uuid={uuid}
       >
-        Remove
-      </button>
+        <ReactSVG
+          title="Remove transaction"
+          src="/src/assets/multiply.svg"
+        />
+      </RemoveButton>
     </Column>
   </Wrapper>
 ));

@@ -1,7 +1,7 @@
 import theme from 'app/theme';
 import {
   fromTheme, dateFormatter, padStartZero, isEmpty,
-  sumTotalWithAmount,
+  getTotalCreditAndDebit,
 } from 'app/js/utils';
 
 describe('utils', () => {
@@ -24,10 +24,12 @@ describe('utils', () => {
     expect(isEmpty(undefined)).toEqual(true);
     expect(isEmpty(null)).toEqual(true);
   });
-  it('sumTotalWithAmount - receive a total and a object with the amount property and should returns the sum total with this amount', () => {
-    expect(sumTotalWithAmount(
-      10,
-      { amount: '20.2' },
-    )).toEqual(30.2);
+
+  it('getTotalCreditAndDebit - receive a total and an object with the amount property and should returns the sum total with this amount', () => {
+    const total = getTotalCreditAndDebit(
+      { credit: 10.1, debit: 0 },
+      { amount: 20.2, type: 'credit' },
+    );
+    expect(total.credit.toFixed(2)).toBe('30.30');
   });
 });

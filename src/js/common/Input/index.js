@@ -4,7 +4,7 @@ import { fromTheme } from 'app/js/utils';
 const Input = styled.input.attrs({
   type: ({ type }) => type || 'text',
 })`
-  width: 100%;
+  width: 26rem;
   height: 2.6rem;
   padding: 0 1.2rem;
   background-color: ${fromTheme('color.secondary')};

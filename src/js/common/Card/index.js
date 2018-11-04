@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { fromTheme } from 'app/js/utils';
 
 export const sizes = {
-  sm: '15%',
-  md: '30%',
+  md: '30rem',
 };
 
 export const CardWrapper = styled.div`

@@ -2,7 +2,7 @@
 
 exports[`Button snapshot should render the Button 1`] = `
 <button
-  className="sc-bdVaJa kaNqeR"
+  className="sc-bdVaJa jolRSw"
   type="button"
 >
   Add transaction

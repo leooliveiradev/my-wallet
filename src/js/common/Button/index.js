@@ -15,7 +15,7 @@ const Button = styled.button.attrs({
   cursor: pointer;
   background-color: ${fromTheme('color.primary')};
   font-family: ${fromTheme('fontStyle.primary')};
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
 `;
 
