@@ -13,7 +13,7 @@
     "lint": "./node_modules/.bin/eslint ./src",
     "start": "NODE_ENV=development webpack-dev-server --hot --host 0.0.0.0 --reload",
     "production": "NODE_ENV=production webpack -p --config=webpack.production.config.js",
-    "test-watch": "npm run test -- --watchAll --coverage --notify",
+    "test-watch": "npm run test -- --watchAll --notify",
     "test-coverage": "npm run test -- --coverage",
     "coverage": "npm run test-coverage && ./node_modules/.bin/http-server ./coverage/lcov-report -o"
   },

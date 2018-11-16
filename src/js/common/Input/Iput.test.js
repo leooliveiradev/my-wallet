@@ -7,7 +7,7 @@ describe('Input snapshot', () => {
     const component = renderer.create(
       <Input
         type="text"
-        onChange={event => console.log(event.target.value)}
+        onChange={() => {}}
         name="transaction"
         placeholder="Transaction"
         rounded

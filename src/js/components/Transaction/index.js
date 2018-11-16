@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import TransactionForm from 'app/js/components/TransactionForm';
 import {
   isEmpty, hasKeys, calculateTotalOfTransactions,
-  precise,
+  precise, fromTheme,
 } from 'app/js/utils';
 import { applyValidators } from 'app/js/utils/form';
 import {
@@ -12,11 +12,25 @@ import {
 import TransactionItem from 'app/js/components/TransactionItem';
 import List from 'app/js/common/List';
 import Header from 'app/js/common/Header';
+import Button from 'app/js/common/Button';
 import CardAmount from 'app/js/components/CardAmount';
 
 const ListTransactions = styled.div`
   display: flex;
   padding: 2rem;
+`;
+
+const FilterButton = styled(Button)`
+  background: ${fromTheme('color.secondary')};
+  color: ${fromTheme('color.black')};
+  font-weight: ${({ checked }) => (checked ? 'checked' : 'normal')};
+`;
+
+const WrapperFilter = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 40rem;
 `;
 
 export const formValidators = {
@@ -45,12 +59,20 @@ const getFields = (amount, description) => ({
   },
 });
 
+export const filterItemsByType = (items, filterType) => {
+  if (!filterType) {
+    return items;
+  }
+  return items.filter(item => item.type === filterType);
+};
+
 class Transaction extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       amount: '',
       description: '',
+      checked: false,
       type: 'credit',
       errors: {
         amount: '',
@@ -133,11 +155,21 @@ class Transaction extends React.Component {
     });
   }
 
+  filterByType = filterType => (
+    () => {
+      this.setState({
+        filterType,
+        checked: true,
+      });
+    }
+  )
+
   render() {
     const {
       errors, amount, description, type,
-      items, total,
+      items, total, filterType, checked,
     } = this.state;
+    const filteredItems = filterType ? filterItemsByType(items, filterType) : items;
     return (
       <Fragment>
         <Header>
@@ -147,6 +179,17 @@ class Transaction extends React.Component {
             amount={total}
             subtitle="Current amount"
           />
+          <WrapperFilter>
+            <FilterButton type="submit" checked={checked} onClick={this.filterByType('credit')}>
+              Credit
+            </FilterButton>
+            <FilterButton type="submit" checked={checked} onClick={this.filterByType('debit')}>
+              Debit
+            </FilterButton>
+            <FilterButton type="submit" checked={checked} onClick={this.filterByType()}>
+              Clear Filter
+            </FilterButton>
+          </WrapperFilter>
           <TransactionForm
             errors={errors}
             values={{ amount, description, type }}
@@ -157,7 +200,7 @@ class Transaction extends React.Component {
         {items.length ? (
           <ListTransactions>
             <List
-              items={items}
+              items={filteredItems}
               deleteTransaction={this.deleteTransaction}
               ItemComponent={TransactionItem}
             />
